@@ -5,8 +5,8 @@ from torchvision.utils import save_image
 import random
 
 # 路径定义
-root_dir = 'D:/workspace/python/深度学习与计算机视觉课程/Transfromers/CIFAR10_imbalance'
-output_dir = 'D:/workspace/python/深度学习与计算机视觉课程/Transfromers/CIFAR10_imbalance_pre'
+root_dir = './CIFAR10_imbalance'
+output_dir = './CIFAR10_imbalance_pre'
 
 
 

@@ -3,7 +3,7 @@ import torch
 
 def calculate_weight(device):
     # CIFAR-10 文件夹路径
-    data_dir = r"D:\workspace\python\深度学习与计算机视觉课程\Transformer\CIFAR10_imbalance"
+    data_dir = r"./CIFAR10_imbalance"
     num_images = []
 
     # 遍历 0 到 9 的文件夹，并统计每个文件夹中的图片数量

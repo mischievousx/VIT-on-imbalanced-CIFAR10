@@ -18,7 +18,7 @@ def main(args):
                               images_class=test_images_label,
                               transform=data_transform)
     model = create_model(num_classes=args.num_classes, has_logits=False).to(device)
-    model.load_state_dict(torch.load('D:/workspace/python/深度学习与计算机视觉课程/Tranformer_copy/weights/model-9.pth'))
+    model.load_state_dict(torch.load('./weights/model-9.pth'))
     model.eval()
     test_loader = torch.utils.data.DataLoader(test_dataset, batch_size, shuffle=False)
     correct = 0
@@ -39,7 +39,7 @@ if __name__ == '__main__':
     parser.add_argument('--num_classes', type=int, default=10)
     parser.add_argument('--batch-size', type=int, default=8)
     parser.add_argument('--data-path', type=str,
-                        default="D:/workspace/python/深度学习与计算机视觉课程/Tranformer_copy/CIFAR10_balance")
+                        default="./CIFAR10_balance")
     parser.add_argument('--device', default='cuda:0', help='device id (i.e. 0 or 0,1 or cpu)')
     opt = parser.parse_args()
     main(opt)
