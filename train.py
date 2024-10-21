@@ -133,7 +133,7 @@ if __name__ == '__main__':
     parser.add_argument('--model-name', default='', help='create model name')
 
     # 选择数据预处理方式
-    parser.add_argument('--preprocess', type=str, default="class_weighting")
+    parser.add_argument('--preprocess', type=str, default="resample")
 
     # 预训练权重路径，如果不想载入就设置为空字符
     parser.add_argument('--weights', type=str, default='./jx_vit_base_patch16_224_in21k-e5005f0a.pth',

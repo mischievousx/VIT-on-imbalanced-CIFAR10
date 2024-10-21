@@ -172,6 +172,7 @@ def train_one_epoch(model, optimizer, data_loader, device, epoch, calculate = Fa
 
 @torch.no_grad()
 def evaluate(model, data_loader, device, epoch, calculate):
+    class_weights = None
     if calculate:
         class_weights = calculate_weight(device)
     loss_function = torch.nn.CrossEntropyLoss(weight=class_weights)
