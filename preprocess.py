@@ -8,8 +8,6 @@ import random
 root_dir = './CIFAR10_imbalance'
 output_dir = './CIFAR10_imbalance_pre'
 
-
-
 # 数据增强的变换操作
 transform_augment = transforms.Compose([
     transforms.RandomRotation(30),   # 随机旋转
@@ -26,7 +24,7 @@ for label in range(10):
 
     image_files = os.listdir(folder_path)
     num_images = len(image_files)
-    max_images = 4513  # 定义目标最大图片数（以最多的类别为准）
+    max_images = 4513  # 定义目标最大图片数
 
     if num_images < max_images:
         # 增加样本数到 max_images

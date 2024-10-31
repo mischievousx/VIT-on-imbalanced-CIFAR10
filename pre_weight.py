@@ -25,4 +25,3 @@ def calculate_weight(device):
     class_weights_tensor = class_weights_tensor.to(device)
 
     return class_weights_tensor
-
