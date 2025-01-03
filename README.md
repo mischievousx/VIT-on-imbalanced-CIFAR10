@@ -4,25 +4,16 @@
 
 由于单次上传文件数量有限，故本次实验只发送代码内容，完整项目浏览：https://github.com/mischievousx/VIT-on-imbalanced-CIFAR10
 
--`net.py`: transformer模型
-
--`preprocess.py`: 用于生成重采样数据
-
--`pre_weight.py`: 用于类权重计算，在使用“train.py”的时候会自动调用
-
--`test.py`: 测试模型，用于测试本次实验模型
-
--`train.py`: 训练模型代码
-
--`utils.py`: 包含数据、标签读取以及单个epoch的训练验证
-
--`CIFAR10_imbalance`: 实验提供的训练、验证数据
-
--`CIFAR10_imbalance_pre`: 重采样数据，该数据需要使用-“preprocess.py”生成
-
--`CIFAR10_balance`: 实验提供的测试数据
-
--`dataset.py`: 构建数据集 
+`net.py`: transformer模型
+`preprocess.py`: 用于生成重采样数据
+`pre_weight.py`: 用于类权重计算，在使用“train.py”的时候会自动调用
+`test.py`: 测试模型，用于测试本次实验模型
+`train.py`: 训练模型代码
+`utils.py`: 包含数据、标签读取以及单个epoch的训练验证
+`CIFAR10_imbalance`: 实验提供的训练、验证数据
+`CIFAR10_imbalance_pre`: 重采样数据，该数据需要使用-“preprocess.py”生成
+`CIFAR10_balance`: 实验提供的测试数据
+`dataset.py`: 构建数据集 
 
 ## 类不均衡处理方式
 - resample
