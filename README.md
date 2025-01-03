@@ -1,37 +1,35 @@
 # VIT-on-imbalanced-CIFAR10
 
-## 简介
+## Introduction
 
-由于单次上传文件数量有限，故本次实验只发送代码内容，完整项目浏览：https://github.com/mischievousx/VIT-on-imbalanced-CIFAR10
+`net.py`: VIT model
 
-`net.py`: transformer模型
+`preprocess.py`: Used to generate resampling data
 
-`preprocess.py`: 用于生成重采样数据
+`pre_weight.py`: For class weighting, automatically called when using “train.py”
 
-`pre_weight.py`: 用于类权重计算，在使用“train.py”的时候会自动调用
+`test.py`: Test model for testing this experimental model
 
-`test.py`: 测试模型，用于测试本次实验模型
+`train.py`: Training model code
 
-`train.py`: 训练模型代码
+`utils.py`: Includes data, labeled reads, and training validation for individual epochs
 
-`utils.py`: 包含数据、标签读取以及单个epoch的训练验证
+`CIFAR10_imbalance`: Experiments provide training, validation data
 
-`CIFAR10_imbalance`: 实验提供的训练、验证数据
+`CIFAR10_imbalance_pre`: Resampling data, which needs to be generated using - “preprocess.py”
 
-`CIFAR10_imbalance_pre`: 重采样数据，该数据需要使用-“preprocess.py”生成
+`CIFAR10_balance`: Experiments provide test data
 
-`CIFAR10_balance`: 实验提供的测试数据
+`dataset.py`: Building data sets
 
-`dataset.py`: 构建数据集 
-
-## 类不均衡处理方式
+## Class Imbalance Handling
 - resample
 - class_weighting
 
-## 从头训练
-- 确定"freeze_weight"为False.
-- 本次实验使用的数据集为“CIFAR10”
-- 模型参数修改如下：
+## Scratch Training
+- Set “freeze_weight” to False.
+- The dataset used in this experiment is “CIFAR10”.
+- The model parameters are modified as follows:
 ```python
 transformations = {
     "train": transforms.Compose([
@@ -50,11 +48,11 @@ transformations = {
 def create_model(num_classes: int = 10):
     return VisionTransformer(img_size=32, patch_size=4, embed_dim=48, depth=12, num_heads=12, num_classes=num_classes)
 ```
-## 使用预训练模型
+## Using pre-trained models
 
-- 确定"freeze_weight"为True.
-- 下载预训练模型'jx_vit_base_patch16_224_in21k-e5005f0a.pth'
-- 模型参数修改如下：
+- Make sure 'freeze_weight' is True.
+- Download the pre-trained model 'jx_vit_base_patch16_224_in21k-e5005f0a.pth'.
+- Modify the model parameters as follows:
 ```python
 transformations = {
     "train": transforms.Compose([
